@@ -57,5 +57,5 @@ variable "hostname" {
   default="tf"
 }
 
-variable "customtags" {
-}
+#variable "customtags" {
+#}
