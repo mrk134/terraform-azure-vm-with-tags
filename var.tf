@@ -57,7 +57,7 @@ variable "hostname" {
   default="tf"
 }
 
-variable "customtags" {
-  type=map
-  default={"Purpose" = "Terraformdemo"}
-}
+#variable "customtags" {
+  #type=map
+  #default={"Purpose" = "Terraformdemo"}
+#}
