@@ -58,4 +58,6 @@ variable "hostname" {
 }
 
 variable "customtags" {
+  type=map
+  default={"Purpose" = "Terraformdemo"}
 }
