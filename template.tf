@@ -1,7 +1,7 @@
 resource "azurerm_resource_group" "main" {
   name     = "${var.resourceGroup}"
   location = "${var.region}"
-  tags = "${jsondecode(var.customtags)}"
+  tags = {"Purpose" = "Terraformdemo"}
 }
 
 resource "azurerm_virtual_network" "main" {
@@ -9,7 +9,8 @@ resource "azurerm_virtual_network" "main" {
   address_space       = ["${var.address_space}"]
   location            = "${azurerm_resource_group.main.location}"
   resource_group_name = "${azurerm_resource_group.main.name}"
-  tags = "${jsondecode(var.customtags)}"
+  #tags = "${jsondecode(var.customtags)}"
+  tags = {"Purpose" = "Terraformdemo"}
 }
 
 resource "azurerm_subnet" "internal" {
@@ -29,7 +30,7 @@ resource "azurerm_network_interface" "main" {
     subnet_id                     = "${azurerm_subnet.internal.id}"
     private_ip_address_allocation = "Dynamic"
   }
-  tags = "${jsondecode(var.customtags)}"
+  tags = {"Purpose" = "Terraformdemo"}
 }
 resource "azurerm_virtual_machine" "main" {
   name                  = "${var.prefix}-azure-vm"
@@ -65,7 +66,7 @@ resource "azurerm_virtual_machine" "main" {
   os_profile_linux_config {
     disable_password_authentication = false
  }
-  tags = "${jsondecode(var.customtags)}" 
+  tags = {"Purpose" = "Terraformdemo"}
   
 }
 
@@ -76,5 +77,5 @@ resource "azurerm_public_ip" "test" {
   resource_group_name = "${azurerm_resource_group.main.name}"
   allocation_method   = "Static"
 
-  tags = "${jsondecode(var.customtags)}"
+  tags = {"Purpose" = "Terraformdemo"}
   }
