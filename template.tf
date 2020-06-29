@@ -75,7 +75,7 @@ resource "azurerm_public_ip" "test" {
   name                = "${var.prefix}-PublicIp"
   location            = "${var.region}"
   resource_group_name = "${azurerm_resource_group.main.name}"
-  allocation_method   = "dynamic"
+  allocation_method   = "Dynamic"
 
   tags = {"Purpose" = "Terraformdemo"}
   }
