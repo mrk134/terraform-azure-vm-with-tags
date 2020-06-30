@@ -27,11 +27,11 @@ variable "admin_password" {
 }
 variable "address_space" {
   description = "The address space that is used by the virtual network. You can supply more than one address space. Changing this forces a new resource to be created."
-  default     = "10.0.0.0/16"
+  default     = "10.1.1.0/16"
 }
 variable "subnet_prefix" {
   description = "The address prefix to use for the subnet."
-  default     = "10.0.10.0/24"
+  default     = "10.1.1.3/24"
 }
 variable "image_publisher" {
   description = "name of the publisher of the image (az vm image list)"
